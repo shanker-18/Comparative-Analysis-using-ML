@@ -1,0 +1,40 @@
+Step 1: Open Postman
+Open Postman on your computer. If you don't have it, download and install it from Postman.
+Step 2: Create a New POST Request
+In Postman, click on the New button on the top left and select Request.
+
+In the "Create Request" window, name your request (e.g., Analyze Data), and click Save.
+
+Step 3: Set Up the Request
+In the request tab, change the request type from GET to POST (located to the left of the URL field).
+
+In the URL field, enter the following endpoint:
+
+arduino
+Copy code
+http://127.0.0.1:5000/analyze
+Since this is a POST request, you don't need to add a body or parameters for this specific example because the dataset is generated within the API.
+
+Step 4: Send the Request
+Click on the Send button in Postman. This will send the POST request to the Flask server.
+
+You should receive a response in the form of a JSON object containing the analysis results:
+
+json
+Copy code
+{
+  "regression_mse": <value>,
+  "classification_accuracy": <value>,
+  "clustering_silhouette_score": <value>
+}
+Step 5: View the Response
+After sending the request, Postman will display the response from the Flask API. The response should include the Mean Squared Error (MSE) from the regression analysis, the classification accuracy, and the silhouette score from the clustering analysis.
+
+You can use the data for further testing or analysis as needed.
+
+Step 6: Modify or Retest
+You can adjust the request or send multiple requests to test different scenarios.
+The Flask server will continue running, so you can send additional requests as long as it remains active.
+Step 7: Stopping the Server
+Once you’re done testing, you can stop the Flask server by pressing Ctrl + C in the terminal or command prompt where it is running.
+This step-by-step guide allows you to interact with the Flask API, which performs various machine learning analyses on a dataset, via Postman.
